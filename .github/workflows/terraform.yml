@@ -42,10 +42,10 @@ jobs:
         with:
           tf_actions_version: 0.12.18
           tf_actions_subcommand: plan
-          args:
-            - "-var \"environment=dev\""
-            - "-var \"password=${{ secrets.MYSQL_PASSWORD }}\""
-            - "-var \"vpc_id=${{ secrets.AWS_VPC_ID }}\""
-            - "-var \"subnet_group=default\""
+          args: |
+            -var "environment=dev"
+            -var "password=${{ secrets.MYSQL_PASSWORD }}"
+            -var "vpc_id=${{ secrets.AWS_VPC_ID }}"
+            -var "subnet_group=default"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
