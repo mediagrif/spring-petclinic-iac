@@ -12,7 +12,7 @@ resource "aws_db_instance" "petclinic_db" {
   engine_version                        = "5.7.22"
   license_model                         = "general-public-license"
   instance_class                        = "db.t3.micro"
-  username                              = "admin"
+  username              = "admin"
   password                              = var.password
   port                                  = 3306
   multi_az                              = false
@@ -45,10 +45,6 @@ resource "aws_db_instance" "petclinic_db" {
     "workload-type"   = "other"
   }
 }
-
-# data "aws_kms_key" "rds_key" {
-#   key_id = "alias/aws/rds"
-# }
 
 data "aws_vpc" "selected" {
   id = var.vpc_id
