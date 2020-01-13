@@ -46,10 +46,6 @@ resource "aws_db_instance" "petclinic_db" {
   }
 }
 
-# data "aws_kms_key" "rds_key" {
-#   key_id = "alias/aws/rds"
-# }
-
 data "aws_vpc" "selected" {
   id = var.vpc_id
 }
